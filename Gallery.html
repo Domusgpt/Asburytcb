@@ -103,5 +103,35 @@
             <p class="footer-text">Purchases made online include author's signature by request.</p>
         </div>
     </footer>
+    <script>
+    function sendEmail() {
+        const request = document.getElementById('customRequest').value;
+        if (request.trim() === '') {
+            alert('Please enter your request.');
+            return;
+        }
+        alert('Your request has been sent!');
+        window.location.href = `mailto:ceo@clearseassolutions.com?subject=Custom Coloring Book Request&body=${encodeURIComponent(request)}`;
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        // Lightbox for Gallery Images
+        document.querySelectorAll('.gallery img').forEach(img => {
+            img.addEventListener('click', function() {
+                const lightbox = document.getElementById('lightbox');
+                const lightboxImg = document.getElementById('lightbox-img');
+                lightbox.style.display = 'block';
+                lightboxImg.src = this.src;
+            });
+        });
+
+        // Close Lightbox
+        document.querySelector('.lightbox .close').addEventListener('click', function() {
+            document.getElementById('lightbox').style.display = 'none';
+        });
+    });
+</script>
+</body>
+</html>
 </body>
 </html>
